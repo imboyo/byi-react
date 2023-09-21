@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import {Button, Card, Divider, Theme, useTheme} from "@mui/material";
+import { Button, Card, Divider, Theme, useTheme } from "@mui/material";
 import IndexTargetCharityItem from "@/components/page/index/IndexTargetCharityItem";
 import theme from "@/components/ThemeRegistry/theme";
 import Link from "next/link";
@@ -16,7 +16,7 @@ const IndexTargetCharity = () => {
         fullWidth
         css={css({
           textTransform: "none",
-          backgroundColor: "#aa1919",
+          backgroundColor: theme.palette.primaryRed.main,
         })}
       >
         Daftar Pejuang Yatim
@@ -25,20 +25,14 @@ const IndexTargetCharity = () => {
       <div css={styles.inquiry.wrapper}>
         <h3 css={styles.inquiry.moneyText(theme)}>Rp. 150.000.000</h3>
         <p css={styles.inquiry.descriptionText}>
-          Jumlah Perolehan Dalam Rupiah
+          Jumlah Perolehan dalam Rupiah
         </p>
       </div>
 
       <Card css={styles.card.wrapper}>
-        <Link href="#wakaf">
-          <IndexTargetCharityItem label="Wakaf" image="/images/generous.png" />
-        </Link>{" "}
-        <Link href="#zakat">
-          <IndexTargetCharityItem label="Wakaf" image="/images/generous.png" />
-        </Link>{" "}
-        <Link href="#qurban">
-          <IndexTargetCharityItem label="Wakaf" image="/images/generous.png" />
-        </Link>{" "}
+        <IndexTargetCharityItem href="#wakaf" label="Wakaf" image="/images/generous.png" />
+        <IndexTargetCharityItem href="#zakat" label="Wakaf" image="/images/social-security.png" />
+        <IndexTargetCharityItem href="#qurban" label="Wakaf" image="/images/cow.png" />
       </Card>
     </section>
   );
@@ -65,7 +59,7 @@ const styles = {
 
     moneyText: (theme: Theme) =>
       css({
-        color: theme.palette.error.main,
+        color: theme.palette.primaryRed.main,
         fontSize: "2rem",
         fontWeight: "bold",
         margin: 0,

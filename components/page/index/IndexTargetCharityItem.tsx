@@ -3,26 +3,31 @@
 import Image from "next/image";
 import { css } from "@emotion/react";
 import theme from "@/components/ThemeRegistry/theme";
+import Link from "next/link";
+import { ButtonBase } from "@mui/material";
 
 interface PropsType {
   label: string;
   image: string;
+  href: string;
 }
 
 const IndexTargetCharityItem = (props: PropsType) => {
   return (
-    <div css={styles.wrapper}>
-      <div css={styles.image.wrapper}>
-        <Image
-          src={props.image}
-          alt="charity"
-          width={28}
-          height={28}
-          css={styles.image.image}
-        />
-      </div>
+    <Link href={props.href} css={styles.wrapper}>
+      <ButtonBase>
+        <div css={styles.image.wrapper} className="image-wrapper">
+          <Image
+            src={props.image}
+            alt="charity"
+            width={28}
+            height={28}
+            css={styles.image.image}
+          />
+        </div>
+      </ButtonBase>
       <p css={styles.label}>{props.label}</p>
-    </div>
+    </Link>
   );
 };
 export default IndexTargetCharityItem;
@@ -35,6 +40,21 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     gap: "0.25rem",
+    textDecoration: "none",
+
+    transition: "all 0.5s ease-in-out",
+
+    "&:hover": {
+      ".image-wrapper": {
+        backgroundColor: theme.palette.error.main,
+        transition: "all 0.25s ease-in-out",
+      },
+
+      p: {
+        textDecoration: "underline",
+        color: theme.palette.primaryRed.main,
+      },
+    },
   }),
 
   image: {
