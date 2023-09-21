@@ -3,6 +3,7 @@
 import React from "react";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import { css } from "@emotion/react";
+import "./globals.css";
 
 export default function RootLayout({
   children,

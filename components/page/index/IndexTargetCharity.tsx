@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Button, Card, Divider, Theme, useTheme } from "@mui/material";
+import { Button, Card, useTheme } from "@mui/material";
 import IndexTargetCharityItem from "@/components/page/index/IndexTargetCharityItem";
 import theme from "@/components/ThemeRegistry/theme";
-import Link from "next/link";
 
 const IndexTargetCharity = () => {
   const theme = useTheme();
@@ -23,16 +22,28 @@ const IndexTargetCharity = () => {
       </Button>
 
       <div css={styles.inquiry.wrapper}>
-        <h3 css={styles.inquiry.moneyText(theme)}>Rp. 150.000.000</h3>
+        <h3 css={styles.inquiry.moneyText}>Rp. 150.000.000</h3>
         <p css={styles.inquiry.descriptionText}>
           Jumlah Perolehan dalam Rupiah
         </p>
       </div>
 
       <Card css={styles.card.wrapper}>
-        <IndexTargetCharityItem href="#wakaf" label="Wakaf" image="/images/generous.png" />
-        <IndexTargetCharityItem href="#zakat" label="Wakaf" image="/images/social-security.png" />
-        <IndexTargetCharityItem href="#qurban" label="Wakaf" image="/images/cow.png" />
+        <IndexTargetCharityItem
+          href="#wakaf"
+          label="Wakaf"
+          image="/images/generous.png"
+        />
+        <IndexTargetCharityItem
+          href="#zakat"
+          label="Wakaf"
+          image="/images/social-security.png"
+        />
+        <IndexTargetCharityItem
+          href="#qurban"
+          label="Wakaf"
+          image="/images/cow.png"
+        />
       </Card>
     </section>
   );
@@ -57,13 +68,12 @@ const styles = {
       textAlign: "center",
     }),
 
-    moneyText: (theme: Theme) =>
-      css({
-        color: theme.palette.primaryRed.main,
-        fontSize: "2rem",
-        fontWeight: "bold",
-        margin: 0,
-      }),
+    moneyText: css({
+      color: theme.palette.primaryRed.main,
+      fontSize: "2rem",
+      fontWeight: "bold",
+      margin: 0,
+    }),
     descriptionText: css({
       margin: 0,
     }),
