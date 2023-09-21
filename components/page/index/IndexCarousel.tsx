@@ -1,11 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import SwipeableViews from "react-swipeable-views";
+
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import IndexPageCarouselNavButton from "@/components/page/index/IndexPageCarouselNavButton";
+import IndexCarouselNavButton from "@/components/page/index/IndexCarouselNavButton";
 import NavigatePrevIcon from "@mui/icons-material/NavigateBefore";
+import { useState } from "react";
 
 const images = [
   {
@@ -31,8 +35,7 @@ const images = [
 ];
 
 export default function SwipeableTextMobileStepper() {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
 
   const handleStepChange = (step: number) => {
     setActiveStep(step);
@@ -51,7 +54,6 @@ export default function SwipeableTextMobileStepper() {
   return (
     <Box
       sx={{
-        maxWidth: 550,
         flexGrow: 1,
         display: "flex",
         flexDirection: "flex-row",
@@ -62,20 +64,19 @@ export default function SwipeableTextMobileStepper() {
         position: "relative",
         overflow: "hidden",
         borderRadius: "1rem",
+        width: "100%",
       }}
     >
-      <IndexPageCarouselNavButton
+      <IndexCarouselNavButton
         onClick={handleBack}
+        icon={<NavigatePrevIcon />}
         sx={{
           left: 10,
         }}
         disabled={activeStep === 0}
-      >
-        <NavigatePrevIcon />
-      </IndexPageCarouselNavButton>
+      />
 
       <SwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
@@ -100,15 +101,14 @@ export default function SwipeableTextMobileStepper() {
         ))}
       </SwipeableViews>
 
-      <IndexPageCarouselNavButton
+      <IndexCarouselNavButton
         onClick={handleNext}
+        icon={<NavigateNextIcon />}
         sx={{
           right: 10,
         }}
         disabled={activeStep === images.length - 1}
-      >
-        <NavigateNextIcon />
-      </IndexPageCarouselNavButton>
+      />
     </Box>
   );
 }

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-"use client"
+"use client";
 import React from "react";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import { css } from "@emotion/react";
@@ -11,11 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body css={css({
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      })}>
+      <body css={styles.body}>
         <ThemeRegistry>
           <main css={styles.main}>{children}</main>
         </ThemeRegistry>
@@ -29,7 +25,10 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "#f3f3f3",
+    width: "100%",
   }),
+
   main: css({
     display: "flex",
     flexDirection: "column",
@@ -38,5 +37,7 @@ const styles = {
     maxWidth: "600px",
     width: "100%",
     padding: "2rem 1rem",
+    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.25)",
+    backgroundColor: "#FFFFFF",
   }),
 };

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 "use client";
-import IndexPageCarousel from "@/components/page/index/IndexPageCarousel";
+import IndexPageCarousel from "@/components/page/index/IndexCarousel";
+import IndexTargetCharity from "@/components/page/index/IndexTargetCharity";
 import { css } from "@emotion/react";
 
 export default function HomePage() {
@@ -8,6 +9,7 @@ export default function HomePage() {
     <>
       <section css={styles.section}>
         <IndexPageCarousel />
+        <IndexTargetCharity />
       </section>
     </>
   );
@@ -19,7 +21,8 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    maxWidth: "600px",
     width: "100%",
+    gap: "1.5rem",
+    padding: "0 1rem",
   }),
 };

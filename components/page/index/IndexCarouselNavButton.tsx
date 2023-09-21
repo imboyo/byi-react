@@ -3,17 +3,17 @@ import * as React from "react";
 
 interface PropsType {
   onClick: () => void;
+  icon: React.ReactNode;
   size?: "small" | "medium" | "large";
   sx?: SxProps;
-  children: React.ReactNode;
   disabled?: boolean;
 }
 
-export default function IndexPageCarouselNavButton({
+export default function IndexCarouselNavButton({
   onClick,
   size = "medium",
   sx,
-  children,
+  icon,
   disabled = false,
 }: PropsType) {
   return (
@@ -34,7 +34,7 @@ export default function IndexPageCarouselNavButton({
         },
       }}
     >
-      {children}
+      {icon}
     </IconButton>
   );
 }
