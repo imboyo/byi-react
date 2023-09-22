@@ -61,6 +61,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: "0.5rem",
+    flexGrow: 1,
   }),
 
   title: (titleAlign: "left" | "center" | "right") =>

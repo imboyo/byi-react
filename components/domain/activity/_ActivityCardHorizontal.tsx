@@ -36,7 +36,7 @@ const styles = {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     gap: 1rem;
     padding: 0.5rem 1rem;
