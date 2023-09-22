@@ -28,6 +28,7 @@ const IndexCategoryListByCategory = () => {
         justify-content: center;
         width: 100%;
         gap: 3rem;
+        padding-bottom: 3rem;
       `}
     >
       {activitiesByCategory.map((category) => (

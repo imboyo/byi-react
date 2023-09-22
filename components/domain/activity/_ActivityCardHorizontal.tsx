@@ -40,21 +40,24 @@ const styles = {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 1rem;
     padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
   `,
 
   image: {
     container: css`
       position: relative;
       border-radius: 1rem;
+      max-width: 170px;
       width: 150px;
       height: 150px;
       overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     `,
 
     img: css`
-      object-fit: contain;
+      object-fit: cover;
       width: auto;
       height: 100%;
     `,

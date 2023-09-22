@@ -25,7 +25,7 @@ const ActivityListByCategory = (props: PropsType) => {
           align-items: center;
           justify-content: center;
           width: 100%;
-          gap: 2rem;
+          gap: 1rem;
         `}
       >
         {props.items.map((item) => (
