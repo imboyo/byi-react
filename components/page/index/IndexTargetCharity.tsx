@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Button, Card, useTheme } from "@mui/material";
-import IndexTargetCharityItem from "@/components/page/index/IndexTargetCharityItem";
+import _IndexTargetCharityItem from "@/components/page/index/_IndexTargetCharityItem";
 import theme from "@/components/ThemeRegistry/theme";
 
 const IndexTargetCharity = () => {
@@ -29,17 +29,17 @@ const IndexTargetCharity = () => {
       </div>
 
       <Card css={styles.card.wrapper}>
-        <IndexTargetCharityItem
+        <_IndexTargetCharityItem
           href="#wakaf"
           label="Wakaf"
           image="/images/generous.png"
         />
-        <IndexTargetCharityItem
+        <_IndexTargetCharityItem
           href="#zakat"
           label="Wakaf"
           image="/images/social-security.png"
         />
-        <IndexTargetCharityItem
+        <_IndexTargetCharityItem
           href="#qurban"
           label="Wakaf"
           image="/images/cow.png"

@@ -8,7 +8,7 @@ import "swiper/css/free-mode";
 import activities from "@/utils/zakatDummyData";
 import ActivityCard from "@/components/domain/activity/ActivityCard";
 
-const IndexChoosenActivitesCarousel = () => {
+const _IndexChoosenActivitesCarousel = () => {
   return (
     <>
       <Swiper
@@ -47,4 +47,4 @@ const IndexChoosenActivitesCarousel = () => {
   );
 };
 
-export default IndexChoosenActivitesCarousel;
+export default _IndexChoosenActivitesCarousel;

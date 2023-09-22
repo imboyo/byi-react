@@ -12,7 +12,7 @@ interface PropsType {
   href: string;
 }
 
-const IndexTargetCharityItem = (props: PropsType) => {
+const _IndexTargetCharityItem = (props: PropsType) => {
   return (
     <Link href={props.href} css={styles.wrapper}>
       <ButtonBase>
@@ -30,7 +30,7 @@ const IndexTargetCharityItem = (props: PropsType) => {
     </Link>
   );
 };
-export default IndexTargetCharityItem;
+export default _IndexTargetCharityItem;
 
 // Region: Styles
 const styles = {

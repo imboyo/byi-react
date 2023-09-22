@@ -9,7 +9,7 @@ interface PropsType {
   disabled?: boolean;
 }
 
-export default function IndexCarouselNavButton({
+export default function _IndexCarouselNavButton({
   onClick,
   size = "medium",
   sx,

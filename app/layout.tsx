@@ -37,7 +37,6 @@ const styles = {
     justifyContent: "center",
     maxWidth: "600px",
     width: "100%",
-    padding: "2rem 1rem",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.25)",
     backgroundColor: "#FFFFFF",
   }),

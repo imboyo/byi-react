@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import SwipeableViews from "react-swipeable-views";
 
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import IndexCarouselNavButton from "@/components/page/index/IndexCarouselNavButton";
+import _IndexCarouselNavButton from "@/components/page/index/_IndexCarouselNavButton";
 import NavigatePrevIcon from "@mui/icons-material/NavigateBefore";
 import { useState } from "react";
 
@@ -67,7 +67,7 @@ export default function SwipeableTextMobileStepper() {
         width: "100%",
       }}
     >
-      <IndexCarouselNavButton
+      <_IndexCarouselNavButton
         onClick={handleBack}
         icon={<NavigatePrevIcon />}
         sx={{
@@ -101,7 +101,7 @@ export default function SwipeableTextMobileStepper() {
         ))}
       </SwipeableViews>
 
-      <IndexCarouselNavButton
+      <_IndexCarouselNavButton
         onClick={handleNext}
         icon={<NavigateNextIcon />}
         sx={{
