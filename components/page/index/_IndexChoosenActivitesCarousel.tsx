@@ -37,7 +37,7 @@ const _IndexChoosenActivitesCarousel = () => {
               collected={_item.collected}
               target={_item.target}
               image={_item.image}
-              link={`/activity/${_item.slug}`}
+              link={`/detail/${_item.slug}`}
               mode="vertical"
             />
           </SwiperSlide>
