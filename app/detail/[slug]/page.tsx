@@ -3,8 +3,7 @@
 
 import { css } from "@emotion/react";
 import DetailImageHero from "@/components/page/detail/DetailImageHero";
-import theme from "@/components/ThemeRegistry/theme";
-
+import DetailPayment from "@/components/page/detail/DetailPayment";
 
 interface PropsType {
   params: {
@@ -13,14 +12,14 @@ interface PropsType {
 }
 
 export default function DetailPage({ params }: PropsType) {
-  console.log(params.slug)
+  console.log(params.slug);
 
   return (
     <section css={styles.sectionContainer}>
       <DetailImageHero image="/activities/program_zakat_emas.jpeg" />
 
       <section css={styles.sectionContent}>
-
+        <DetailPayment />
       </section>
     </section>
   );

@@ -18,6 +18,7 @@ const DetailImageHero = (props: PropsType) => {
           quality={100}
           sizes={"100vw"}
           css={styles.image.image}
+          priority={true}
         />
       </div>
     </section>
@@ -47,6 +48,7 @@ const styles = {
       width: 100%;
       height: auto;
       aspect-ratio: 1/1;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     `,
   },
 };
