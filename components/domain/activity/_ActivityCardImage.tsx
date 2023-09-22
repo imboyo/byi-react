@@ -1,14 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import Image from "next/image";
 import { css } from "@emotion/react";
+import { SerializedStyles } from "@emotion/react";
 
 interface PropsType {
   image: string;
+  css?: SerializedStyles;
 }
 
-const CharityActivityCardImage = (props: PropsType) => {
+const _ActivityCardImage = (props: PropsType) => {
   return (
-    <div css={styles.wrapper}>
+    <div css={`${styles.wrapper} ${props.css}`}>
       <Image
         src={props.image}
         alt="activities"
@@ -19,7 +21,7 @@ const CharityActivityCardImage = (props: PropsType) => {
     </div>
   );
 };
-export default CharityActivityCardImage;
+export default _ActivityCardImage;
 
 // Region: Styles
 const styles = {

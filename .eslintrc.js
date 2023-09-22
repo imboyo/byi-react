@@ -9,8 +9,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "next/core-web-vitals",
     "next",
+    "next/core-web-vitals",
     "prettier",
   ],
   overrides: [
@@ -31,6 +31,6 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "react"],
   rules: {
-    "react/no-unknown-property": ["error", { "ignore": ["css"] }]
+    "react/no-unknown-property": ["error", { ignore: ["css"] }],
   },
 };

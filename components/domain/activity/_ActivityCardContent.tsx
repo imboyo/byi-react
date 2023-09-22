@@ -11,14 +11,15 @@ interface PropsType {
   target: number;
   collected: number;
   link: string;
+  titleAlign?: "left" | "center" | "right";
 }
 
-const CharityActivityCardContent = (props: PropsType) => {
+const _ActivityCardContent = (props: PropsType) => {
   const percentage = Math.min((props.collected / props.target) * 100, 100);
 
   return (
     <div css={styles.wrapper}>
-      <h4 css={styles.title}>{props.title}</h4>
+      <h4 css={styles.title(props.titleAlign || "center")}>{props.title}</h4>
 
       <div css={styles.subContainer.wrapper}>
         <p css={styles.subContainer.collected}>
@@ -50,7 +51,7 @@ const CharityActivityCardContent = (props: PropsType) => {
     </div>
   );
 };
-export default CharityActivityCardContent;
+export default _ActivityCardContent;
 
 // Region: Styles
 const styles = {
@@ -61,11 +62,12 @@ const styles = {
     gap: "0.5rem",
   }),
 
-  title: css({
-    color: grey[900],
-    fontWeight: "bold",
-    textAlign: "center",
-  }),
+  title: (titleAlign: "left" | "center" | "right") =>
+    css({
+      color: grey[900],
+      fontWeight: "bold",
+      textAlign: titleAlign,
+    }),
 
   // Section
   subContainer: {
