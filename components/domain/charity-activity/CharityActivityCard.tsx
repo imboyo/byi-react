@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { Button, Card, LinearProgress, useTheme } from "@mui/material";
+import { Button, Card, LinearProgress } from "@mui/material";
 import { css } from "@emotion/react";
 import { grey, red } from "@mui/material/colors";
 import Link from "next/link";
@@ -16,11 +16,14 @@ interface PropsType {
 }
 
 const CharityActivityCard = (props: PropsType) => {
+  // Get Percentage of Collected and Dont let it more than 100%
+  const percentage = Math.min((props.collected / props.target) * 100, 100);
+
   return (
     <Card css={styles.cardWrapper}>
       <CharityActivityCardImage image={props.image} />
 
-      {/* Content */}
+      {/* TODO: Refactor to Small Component - Content */}
       <div css={styles.content.wrapper}>
         <h4 css={styles.content.title}>{props.title}</h4>
 
@@ -29,7 +32,11 @@ const CharityActivityCard = (props: PropsType) => {
             Terkumpul Rp. {numToCurrencyFormat(props.collected)}
           </p>
 
-          <LinearProgress value={50} variant="determinate" color="error" />
+          <LinearProgress
+            value={percentage}
+            variant="determinate"
+            color="error"
+          />
 
           <p css={styles.content.subContainer.target}>
             Target Rp. {numToCurrencyFormat(props.target)}

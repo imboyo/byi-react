@@ -4,18 +4,8 @@ import IndexChoosenActivitesCarousel from "@/components/page/index/IndexChoosenA
 
 const IndexChoosenActivites = () => {
   return (
-    <section
-      css={css({
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "1.5rem",
-        width: "100%",
-      })}
-    >
+    <section css={styles.section}>
       <h3>Program Pilihan</h3>
-
       <IndexChoosenActivitesCarousel />
     </section>
   );
@@ -23,3 +13,13 @@ const IndexChoosenActivites = () => {
 export default IndexChoosenActivites;
 
 // Region: Styles
+const styles = {
+  section: css({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "1.5rem",
+    width: "100%",
+  }),
+};

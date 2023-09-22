@@ -7,6 +7,39 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import CharityActivityCard from "@/components/domain/charity-activity/CharityActivityCard";
 
+const activities = [
+  {
+    title: "Zakat Fidyah",
+    collected: 30010000,
+    target: 150000000,
+    image: "/activities/program_zakat_fidyah.jpeg",
+  },
+  {
+    title: "Zakat Emas",
+    collected: 40000000,
+    target: 120000000,
+    image: "/activities/program_zakat_emas.jpeg",
+  },
+  {
+    title: "Zakat Fitrah",
+    collected: 50000000,
+    target: 100000000,
+    image: "/activities/program_zakat_fitrah.jpeg",
+  },
+  {
+    title: "Qurban Penuh Cinta",
+    collected: 35000000,
+    target: 200000000,
+    image: "/activities/program_qurban_yatim.jpg",
+  },
+  {
+    title: "Wakaf Pembebasan Akses",
+    collected: 35000000,
+    target: 170000000,
+    image: "/activities/program_wakaf_lahan.jpeg",
+  }
+];
+
 const IndexChoosenActivitesCarousel = () => {
   return (
     <>
@@ -23,9 +56,8 @@ const IndexChoosenActivitesCarousel = () => {
           cursor: "grab",
         })}
       >
-
         {/* TODO: Use Real Data Later with Map Looping */}
-        {[...Array(10)].map((_, index) => (
+        {activities.map((_item, index) => (
           <SwiperSlide
             key={index}
             style={{
@@ -33,10 +65,10 @@ const IndexChoosenActivitesCarousel = () => {
             }}
           >
             <CharityActivityCard
-              title="Zakat Fidyah"
-              collected={3000000}
-              target={6000000}
-              image="/activites/program_wakaf_lahan.jpeg"
+              title={_item.title}
+              collected={_item.collected}
+              target={_item.target}
+              image={_item.image}
               link="/detail/slug"
             />
           </SwiperSlide>
