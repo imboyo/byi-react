@@ -2,10 +2,10 @@
 import { Button, Card, LinearProgress, useTheme } from "@mui/material";
 import { css } from "@emotion/react";
 import { grey, red } from "@mui/material/colors";
-import Image from "next/image";
 import Link from "next/link";
 import { numToCurrencyFormat } from "@/utils/numToCurrencyFormat";
 import theme from "@/components/ThemeRegistry/theme";
+import CharityActivityCardImage from "@/components/domain/charity-activity/CharityActivityCardImage";
 
 interface PropsType {
   title: string;
@@ -15,19 +15,10 @@ interface PropsType {
   link: string;
 }
 
-const CharityActivityCardItem = (props: PropsType) => {
+const CharityActivityCard = (props: PropsType) => {
   return (
     <Card css={styles.cardWrapper}>
-      {/* Image cover */}
-      <div css={styles.image.wrapper}>
-        <Image
-          src="/activites/program_wakaf_lahan.jpeg"
-          alt="activities"
-          width={250}
-          height={250}
-          css={styles.image.img}
-        />
-      </div>
+      <CharityActivityCardImage image={props.image} />
 
       {/* Content */}
       <div css={styles.content.wrapper}>
@@ -62,7 +53,7 @@ const CharityActivityCardItem = (props: PropsType) => {
     </Card>
   );
 };
-export default CharityActivityCardItem;
+export default CharityActivityCard;
 
 // Region: Styles
 const styles = {
@@ -75,17 +66,6 @@ const styles = {
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.70)",
     border: `1px solid ${grey[700]}`,
   }),
-
-  // Section
-  image: {
-    wrapper: css({
-      width: "100%",
-      height: "250px",
-    }),
-    img: css({
-      objectFit: "cover",
-    }),
-  },
 
   // Section
   content: {
