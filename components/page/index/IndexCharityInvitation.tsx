@@ -16,9 +16,10 @@ const IndexCharityInvitation = () => {
         <Image
           src="/images/QRIS.jpg"
           alt="QRIS"
-          width={300}
-          height={300}
+          width={0}
+          height={0}
           quality={100}
+          sizes={"100vw"}
           css={styles.QRISImage.img}
         />
       </div>
@@ -43,8 +44,10 @@ const styles = {
     container: css`
       position: relative;
       margin-top: 3rem;
+      max-width: 400px;
     `,
     img: css`
+      object-fit: cover;
       width: 100%;
       height: auto;
     `,
