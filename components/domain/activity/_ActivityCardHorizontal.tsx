@@ -12,7 +12,9 @@ const _ActivityCardHorizontal = (props: ComponentDomainActivityCardType) => {
         <Image
           src={props.image}
           alt="activities"
-          layout={"fill"}
+          width={0}
+          height={0}
+          quality={100}
           sizes={"100vw"}
           css={styles.image.img}
         />
@@ -45,15 +47,16 @@ const styles = {
   image: {
     container: css`
       position: relative;
+      border-radius: 1rem;
       width: 150px;
       height: 150px;
-      border-radius: 1rem;
       overflow: hidden;
     `,
 
     img: css`
-      object-fit: cover;
-      width: 100%;
+      object-fit: contain;
+      width: auto;
+      height: 100%;
     `,
   },
 };
