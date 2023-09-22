@@ -1,19 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import ActivityListByCategoryHeading from "@/components/domain/activity/ActivityListByCategoryHeading";
 import ActivityCard from "@/components/domain/activity/ActivityCard";
 
-// TODO: Use Real Data Later
-import activities from "@/utils/zakatDummyData";
+import { ActivityType } from "@/types/components/domain/activity";
+import _ActivityListByCategoryHeading from "@/components/domain/activity/_ActivityListByCategoryHeading";
 
-const ActivityListByCategory = () => {
+// TODO: Use Real Data Later
+interface PropsType {
+  title: string;
+  items: ActivityType[];
+}
+
+const ActivityListByCategory = (props: PropsType) => {
   return (
     <div css={styles.container}>
-      <ActivityListByCategoryHeading>
-        Program Zakat
-      </ActivityListByCategoryHeading>
+      <_ActivityListByCategoryHeading>
+        {props.title}
+      </_ActivityListByCategoryHeading>
 
-      {/* Activity List */}
       <div
         css={css`
           display: flex;
@@ -21,16 +25,20 @@ const ActivityListByCategory = () => {
           align-items: center;
           justify-content: center;
           width: 100%;
+          gap: 2rem;
         `}
       >
-        <ActivityCard
-          mode="horizontal"
-          title={activities[0].title}
-          target={activities[0].target}
-          collected={activities[0].collected}
-          image={activities[0].image}
-          link={`/detail/${activities[0].slug}`}
-        />
+        {props.items.map((item) => (
+          <ActivityCard
+            key={item.slug}
+            mode="horizontal"
+            title={item.title}
+            target={item.target}
+            collected={item.collected}
+            image={item.image}
+            link={`/detail/${item.slug}`}
+          />
+        ))}
       </div>
     </div>
   );

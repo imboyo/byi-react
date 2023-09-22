@@ -41,6 +41,7 @@ const _ActivityCardContent = (props: PropsType) => {
             variant="contained"
             fullWidth
             css={styles.subContainer.linkButton}
+            size={"small"}
           >
             Donasi Sekarang
           </Button>

@@ -38,7 +38,7 @@ const IndexChoosenActivitesCarousel = () => {
               target={_item.target}
               image={_item.image}
               link={`/activity/${_item.slug}`}
-              mode="horizontal"
+              mode="vertical"
             />
           </SwiperSlide>
         ))}

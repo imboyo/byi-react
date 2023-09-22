@@ -8,7 +8,7 @@ interface PropsType {
   children: ReactNode;
 }
 
-const ActivityListByCategoryHeading = (props: PropsType) => {
+const _ActivityListByCategoryHeading = (props: PropsType) => {
   const theme = useTheme();
 
   return (
@@ -22,7 +22,7 @@ const ActivityListByCategoryHeading = (props: PropsType) => {
     </div>
   );
 };
-export default ActivityListByCategoryHeading;
+export default _ActivityListByCategoryHeading;
 
 // Region: Styles
 const styles = {
