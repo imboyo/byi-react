@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 import DetailImageHero from "@/components/page/detail/DetailImageHero";
 import DetailPayment from "@/components/page/detail/DetailPayment";
 import DetailCampaignDetail from "@/components/page/detail/DetailCampaignDetail";
+import DetailSharingAction from "@/components/page/detail/DetailSharingAction";
 
 interface PropsType {
   params: {
@@ -22,6 +23,7 @@ export default function DetailPage({ params }: PropsType) {
       <section css={styles.sectionContent}>
         <DetailPayment />
         <DetailCampaignDetail />
+        <DetailSharingAction />
       </section>
     </section>
   );
@@ -44,6 +46,6 @@ const styles = {
     gap: 2rem;
     
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 2rem 3rem 2rem;
   `,
 };
