@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 "use client";
-import { IconButton, Modal, Typography, useTheme } from "@mui/material";
+import { IconButton, Modal, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import { css } from "@emotion/react";
 import ClearIcon from "@mui/icons-material/Clear";
