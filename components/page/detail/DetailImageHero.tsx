@@ -12,7 +12,7 @@ const DetailImageHero = (props: PropsType) => {
       <div css={styles.image.container}>
         <Image
           src={props.image}
-          alt=""
+          alt="Charity"
           width={0}
           height={0}
           quality={100}
