@@ -4,9 +4,11 @@ import { createTheme } from "@mui/material/styles";
 declare module '@mui/material/styles' {
   interface Palette {
     primaryRed: Palette['primary'];
+    teal: Palette['primary'];
   }
   interface PaletteOptions {
     primaryRed: PaletteOptions['primary'];
+    teal: PaletteOptions['primary'];
   }
 }
 
@@ -23,6 +25,11 @@ const theme = createTheme({
       main: "#a20404",
       contrastText: "#fff",
     },
+    teal: {
+      main: "#009688",
+      dark: "#00695f",
+      contrastText: "#fff",
+    }
   },
   typography: {
     fontFamily: roboto.style.fontFamily,

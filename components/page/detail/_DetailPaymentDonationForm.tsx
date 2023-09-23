@@ -1,15 +1,13 @@
 /** @jsxImportSource @emotion/react */
 "use client";
 import { css } from "@emotion/react";
-import {
-  Button,
-  InputAdornment,
-  TextField,
-} from "@mui/material";
+import { Button, InputAdornment, TextField } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import _DetailPaymentDonationFormButtonGroup from "@/components/page/detail/_DetailPaymentDonationFormButtonGroup";
+import _DetailPaymentDonationFormModal from "@/components/page/detail/_DetailPaymentDonationFormModal";
+import { useState } from "react";
 
 const schema = yup.object({
   nominal: yup.number().required().min(10000).max(1000000000000000),
@@ -39,12 +37,18 @@ const _DetailPaymentDonationForm = (props: PropsType) => {
   const onSubmit = (data: { nominal: number }) => {
     // Pass data and event to parent component
     props.onSubmit(data);
+    setIsOpen(true);
   };
+
+  // Modal
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       {/* Button Group Nominal */}
-      <_DetailPaymentDonationFormButtonGroup handleClickItem={handleClickNominalButton} />
+      <_DetailPaymentDonationFormButtonGroup
+        handleClickItem={handleClickNominalButton}
+      />
 
       {/* Form */}
       <form
@@ -81,10 +85,12 @@ const _DetailPaymentDonationForm = (props: PropsType) => {
         <Button fullWidth variant="contained" type="submit">
           Donasi Sekarang
         </Button>
+        <_DetailPaymentDonationFormModal
+          isOpen={isOpen}
+          onButtonClose={() => setIsOpen(false)}
+        />
       </form>
     </>
   );
 };
 export default _DetailPaymentDonationForm;
-
-
