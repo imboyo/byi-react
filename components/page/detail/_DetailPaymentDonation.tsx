@@ -4,10 +4,14 @@ import _DetailPaymentDonationHeading from "@/components/page/detail/_DetailPayme
 import _DetailPaymentDonationForm from "@/components/page/detail/_DetailPaymentDonationForm";
 
 const _DetailPaymentDonation = () => {
+  const onSubmit = (data: { nominal: number }) => {
+    console.log(data);
+  };
+
   return (
     <div css={styles.container}>
       <_DetailPaymentDonationHeading />
-      <_DetailPaymentDonationForm />
+      <_DetailPaymentDonationForm onSubmit={(data) => onSubmit(data)} />
     </div>
   );
 };

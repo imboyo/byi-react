@@ -21,9 +21,10 @@ const styles = {
     gap: 1.5rem;
     padding: 1rem;
     width: 100%;
-
-    // border only left, right, and bottom
+    
     border: 1px solid #e0e0e0;
     border-top: none;
+    
+    border-radius: 0 0 10px 10px;
   `,
 };

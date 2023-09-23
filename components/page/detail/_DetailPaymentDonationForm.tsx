@@ -15,8 +15,12 @@ const schema = yup.object({
   nominal: yup.number().required().min(10000).max(1000000000000000),
 });
 
+interface PropsType {
+  onSubmit: (data: { nominal: number }) => void;
+}
+
 // Region: COMPONENT
-const _DetailPaymentDonationForm = () => {
+const _DetailPaymentDonationForm = (props: PropsType) => {
   // * Button Group Nominal
   const handleClickNominalButton = (newValue: number) => {
     setValue("nominal", newValue);
@@ -33,7 +37,8 @@ const _DetailPaymentDonationForm = () => {
   });
 
   const onSubmit = (data: { nominal: number }) => {
-    console.log(data.nominal);
+    // Pass data and event to parent component
+    props.onSubmit(data);
   };
 
   return (
